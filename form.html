@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+    <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776</span>
+
+
+        <span class="nav-links">
+            <ul>
+                <li><a href="/index.html">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">BLOG</a></li>
+            </ul>
+        </span>
+      </nav>
+    </section>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="/form.html">Add</a>
+        <a href="/view.html">View</a>
+      </div>
+<div class="form-wrapper container">
+    <form name="form" action="javascript:submitUserResponse()" class="form">
+    
+      
+      <div class="form-group">
+        <label for="fname">First Name:</label>
+        <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname">
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name:</label>
+        <input type="text" class="form-control" id="lname" placeholder="Enter Last name" name="lname">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" class="form-control" id="age" placeholder="Enter age" name="age">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+    <div class="footer-basic">
+      <footer>
+        <ul class="list-inline">
+
+          <li class="list-inline-item"><a href="/index.html">HOME</a></li>
+
+          <li class="list-inline-item"><a href="#">SERVICES</a></li>
+          <li class="list-inline-item"><a href="#">ABOUT</a></li>
+          <li class="list-inline-item"><a href="#">TERMS</a></li>
+        </ul>
+        <p class="copyright">Company Name @ 2023</p>
+      </footer>
+    </div>
+    <script>
+      function submitUserResponse() {
+        let data = localStorage.getItem("data")
+          ? JSON.parse(localStorage.getItem("data"))
+          : [];
+        let newUser = {
+          sNo: data.length + 1,
+          fname: fname.value,
+          lname: lname.value,
+          age: age.value,
+          email: email.value
+        };
+        data.push(newUser);
+        localStorage.setItem("data", JSON.stringify(data));
+        location.replace("/view.html");
+      }
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="/form.html">Add</a>
+        <a href="/view.html">View</a>
+      </div>
+    <!-- <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776</span> -->
+
+    <section class="header">
+      <nav>
+    <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776</span>
+
+
+        <span class="nav-links">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">BLOG</a></li>
+            </ul>
+        </span>
+      </nav>
+    </section>
+
+    <!-- footer -->
+    <div class="main-body">
+    <img src="/Images/sprct.jpeg" alt="">
+
+    </div>
+<div class="footer-basic">
+    <footer>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="/index.html">HOME</a></li>
+            <li class="list-inline-item"><a href="#">SERVICES</a></li>
+            <li class="list-inline-item"><a href="#">ABOUT</a></li>
+            <li class="list-inline-item"><a href="#">TERMS</a></li>
+        </ul>
+        <p class="copyright">Company Name @ 2023</p>
+    </footer>
+</div>
+    
+    <!-- <span style="font-size: 30px; cursor: pointer" onclick="openNav()"
+      >&#9776;</span
+    > -->
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
